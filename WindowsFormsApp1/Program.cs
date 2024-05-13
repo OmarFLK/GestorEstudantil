@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,17 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_Form());
+            Application.Run(new formLogin());
+
+            formLogin formLogin = new formLogin();
+            if (formLogin.ShowDialog() == DialogResult());
+            {
+                Aplication.Run(new FormPrincipal());
+            }
+            else ();
+            {
+                Aplication.Exit();
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Login_Form
+    partial class formLogin
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -119,7 +119,7 @@
             this.buttoncancelar.UseVisualStyleBackColor = true;
             this.buttoncancelar.Click += new System.EventHandler(this.buttoncancelar_Click);
             // 
-            // Login_Form
+            // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,7 +133,7 @@
             this.Controls.Add(this.labeluser);
             this.Controls.Add(this.labelacessar);
             this.Controls.Add(this.pictureBoxuser);
-            this.Name = "Login_Form";
+            this.Name = "formLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Form_Load);

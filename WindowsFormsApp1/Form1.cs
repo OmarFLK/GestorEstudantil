@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Login_Form : Form
+    public partial class formLogin : Form
     {
-        public Login_Form()
+        public formLogin()
         {
             InitializeComponent();
         }
@@ -56,11 +56,11 @@ namespace WindowsFormsApp1
 
             if (tabelaDeDados.Rows.Count > 0)
             {
-                MessageBox.Show("SIM");
+                this.DialogResult= DialogResult.OK; 
             }
             else 
             {
-                MessageBox.Show("Usuário ou senha inválidos.","Erro de Login" MessageBoxButtons.OK, MessageBoxButtons.Error);
+                MessageBox.Show("Usuário ou senha inválidos.","Erro de Login", MessageBoxButtons.OK , MessageBoxButtons.Error);
             }
 
         }
