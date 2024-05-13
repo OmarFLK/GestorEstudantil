@@ -92,8 +92,10 @@
             // 
             this.textBox2senha.Location = new System.Drawing.Point(134, 287);
             this.textBox2senha.Name = "textBox2senha";
+            this.textBox2senha.PasswordChar = '*';
             this.textBox2senha.Size = new System.Drawing.Size(218, 20);
             this.textBox2senha.TabIndex = 5;
+            this.textBox2senha.UseSystemPasswordChar = true;
             // 
             // buttonadicionar
             // 
@@ -104,6 +106,7 @@
             this.buttonadicionar.TabIndex = 7;
             this.buttonadicionar.Text = "Adicionar";
             this.buttonadicionar.UseVisualStyleBackColor = true;
+            this.buttonadicionar.Click += new System.EventHandler(this.buttonadicionar_Click);
             // 
             // buttoncancelar
             // 
@@ -114,6 +117,7 @@
             this.buttoncancelar.TabIndex = 8;
             this.buttoncancelar.Text = "Cancelar";
             this.buttoncancelar.UseVisualStyleBackColor = true;
+            this.buttoncancelar.Click += new System.EventHandler(this.buttoncancelar_Click);
             // 
             // Login_Form
             // 
