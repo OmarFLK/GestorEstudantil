@@ -26,5 +26,41 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void novoEstudanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormInserirEstudante formInserirEstudante = new FormInserirEstudante();
+            formInserirEstudante.ShowDialog();
+        }
+
+        private void estatísticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editarRemoverToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gerenciarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pontosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -20,13 +20,14 @@ namespace WindowsFormsApp1
             Application.Run(new formLogin());
 
             formLogin formLogin = new formLogin();
-            if (formLogin.ShowDialog() == DialogResult());
+
+            if (formLogin.ShowDialog() == DialogResult.OK)
             {
-                Aplication.Run(new FormPrincipal());
+                Application.Run(new FormPrincipal());
             }
-            else ();
+            else
             {
-                Aplication.Exit();
+                Application.Exit();
             }
         }
     }

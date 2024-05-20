@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             }
             else 
             {
-                MessageBox.Show("Usuário ou senha inválidos.","Erro de Login", MessageBoxButtons.OK , MessageBoxButtons.Error);
+                MessageBox.Show("Usuário ou senha inválidos.","Erro de Login", MessageBoxButtons.OK , MessageBoxIcon.Error);
             }
 
         }
