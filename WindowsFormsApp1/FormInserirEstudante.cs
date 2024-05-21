@@ -110,13 +110,31 @@ namespace WindowsFormsApp1
             int anoDeNascimento = dateTimePickerNascimento.Value.Year;
             int anoAtual = DateTime.Now.Year;
 
-            if ((anoAtual - anoDeNascimento) > 10 || (anoAtual - anoDeNascimento) > 100) 
-            
+            if ((anoAtual - anoDeNascimento) > 10 || (anoAtual - anoDeNascimento) > 100)
+
             {
                 MessageBox.Show("O aluno precisa ter entre 10 e 100 anos",
                     "Ano de nascimento Inválido",
                     MessageBoxButtons.Ok,
                     MessageBoxIcon.Error);
+            }
+            else if (Verificar())
+            {
+                pictureBoxFotoAlunoNovo.Image.Save(foto, pictureBoxFotoAlunoNovo.Image.RawFormat );
+                if (estudante.inserirEstudante(nome, sobrenome, nascimento, telefone, endereco, genero))
+                {
+                    MessageBox.Show("Novo aluno cadastrado!", "SUCESSO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else 
+                
+                {
+                    MessageBox.Show("Aluno não cadastrado", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+
+            {
+                MessageBox.Show("A campos não preenxidos em seu formulário de inscrição.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
