@@ -73,9 +73,11 @@ namespace WindowsFormsApp1
 
         bool Verificar() 
         {
-            if ((textBoxNome.Text.Trim() == "") ||
-              (textBoxSobreNome.Text.Trim == "") ||
-              (textBoxEndenreco.Text.Trim == "") ||
+            if((textBoxNome.Text.Trim() == "")   ||
+              (textBoxSobreNome.Text.Trim() == "") ||
+              (textBoxTelefone.Text.Trim() == "")  ||
+              (textBoxEndenreco.Text.Trim() == "") ||
+
               (pictureBoxFotoAlunoNovo.Image == null)
               )
             {
@@ -115,13 +117,13 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("O aluno precisa ter entre 10 e 100 anos",
                     "Ano de nascimento Inválido",
-                    MessageBoxButtons.Ok,
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
             else if (Verificar())
             {
                 pictureBoxFotoAlunoNovo.Image.Save(foto, pictureBoxFotoAlunoNovo.Image.RawFormat );
-                if (estudante.inserirEstudante(nome, sobrenome, nascimento, telefone, endereco, genero))
+                if (estudante.inserirEstudante(nome, sobrenome, nascimento, telefone, endereco, genero, foto))
                 {
                     MessageBox.Show("Novo aluno cadastrado!", "SUCESSO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

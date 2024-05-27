@@ -87,6 +87,7 @@
             this.textBoxusuario.Name = "textBoxusuario";
             this.textBoxusuario.Size = new System.Drawing.Size(218, 20);
             this.textBoxusuario.TabIndex = 4;
+            this.textBoxusuario.TextChanged += new System.EventHandler(this.textBoxusuario_TextChanged);
             // 
             // textBox2senha
             // 
@@ -96,6 +97,7 @@
             this.textBox2senha.Size = new System.Drawing.Size(218, 20);
             this.textBox2senha.TabIndex = 5;
             this.textBox2senha.UseSystemPasswordChar = true;
+            this.textBox2senha.TextChanged += new System.EventHandler(this.textBox2senha_TextChanged);
             // 
             // buttonadicionar
             // 

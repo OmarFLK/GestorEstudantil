@@ -1,10 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace WindowsFormsApp1
 {
@@ -12,10 +15,10 @@ namespace WindowsFormsApp1
     {
         MeuBancoDeDados meuBancoDeDados = new MeuBancoDeDados();
 
-        
-       public bool inserirEstudante(string nome, string sobrenome, DateTime nascimento, string telefone, string genero, string endereco, MemoryStream foto)
+
+        public bool inserirEstudante(string nome, string sobrenome, DateTime nascimento, string telefone, string genero, string endereco, MemoryStream foto)
         {
-         MySqlCommand comando = new MySqlCommand("SELECT * FROM `estudantes`(`id`, `Nome`, `sobrenome`, `Nascimento`, `Genero`,  `Telefone`, `Endereco`, `foto`) VALUES(@Nome,@sobrenome,@Nascimento,@Genero,@Telefone,@Endereco,@foto,@id)");
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM `estudantes`(`id`, `Nome`, `sobrenome`, `Nascimento`, `Genero`,  `Telefone`, `Endereco`, `foto`) VALUES(@Nome,@sobrenome,@Nascimento,@Genero,@Telefone,@Endereco,@foto,@id)");
 
             comando.Parameters.Add("@nome", MySqlDbType.VarChar).Value = nome;
             comando.Parameters.Add("@sobrenome", MySqlDbType.VarChar).Value = sobrenome;
@@ -32,11 +35,24 @@ namespace WindowsFormsApp1
                 meuBancoDeDados.fecharconexao();
                 return true;
             }
-            else 
+            else
             {
                 meuBancoDeDados.fecharconexao();
                 return false;
             }
         }
+
+        // RETONAR A TABELA DOS ESTUDANTES QUE ESTAO NO BANCO DE DADOS.
+        public DataTable getEstdantes(MySqlCommand comando)
+        {
+            comando.Connection = meuBancoDeDados.GetConnection;
+
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+            DataTable tabelaDeDados = new DataTable();
+            adaptador.Fill(tabelaDeDados);
+
+            return tabelaDeDados;
+        }
+
     }
 }

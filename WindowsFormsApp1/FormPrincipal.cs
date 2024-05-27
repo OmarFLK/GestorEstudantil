@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace WindowsFormsApp1
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void estudantesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,6 +62,12 @@ namespace WindowsFormsApp1
         private void pontosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void listaDeEstudantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListarEstudantes formListarEstudantes = new FormListarEstudantes();
+            formListarEstudantes.Show(this);
         }
     }
 }

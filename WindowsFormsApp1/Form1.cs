@@ -69,5 +69,15 @@ namespace WindowsFormsApp1
         {
             Close();
         }
+
+        private void textBoxusuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2senha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
