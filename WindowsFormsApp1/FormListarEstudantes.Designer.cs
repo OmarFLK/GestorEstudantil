@@ -35,12 +35,14 @@
             // 
             // dataGridViewListadeAlunos
             // 
+            this.dataGridViewListadeAlunos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewListadeAlunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListadeAlunos.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewListadeAlunos.Name = "dataGridViewListadeAlunos";
             this.dataGridViewListadeAlunos.Size = new System.Drawing.Size(776, 331);
             this.dataGridViewListadeAlunos.TabIndex = 0;
             this.dataGridViewListadeAlunos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListadeAlunos_CellContentClick);
+            this.dataGridViewListadeAlunos.DoubleClick += new System.EventHandler(this.dataGridViewListadeAlunos_DoubleClick);
             // 
             // buttonAtualizar
             // 

@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
 
         }
 
-
+        ESTUDANTE estudante = new ESTUDANTE();
 
         private void dataGridViewListadeAlunos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
 
             dataGridViewListadeAlunos.RowTemplate.Height = 80;
 
-            dataGridViewListadeAlunos.DataSource = estudante.getEstudante(comando);
+            dataGridViewListadeAlunos.DataSource = estudante.getEstdantes(comando);
 
             colunaDeFotos = (DataGridViewImageColumn)dataGridViewListadeAlunos.Columns[7];
 
@@ -52,6 +52,10 @@ namespace WindowsFormsApp1
 
 
         }
-      
+
+        private void dataGridViewListadeAlunos_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
