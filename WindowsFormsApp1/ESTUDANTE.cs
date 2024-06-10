@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 namespace WindowsFormsApp1
@@ -80,6 +81,28 @@ namespace WindowsFormsApp1
                 return false;
             }
         }
+
+        // Deleta um esduante com base em seu ID.
+        public bool apagarEstudante(int id)
+        {
+            MySqlCommand comando = new MySqlCommand("DELETE FROM `estudantes` WHERE `id` = @id");
+
+            comando.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+
+            meuBancoDeDados.abrirconexao();
+            if (comando.ExecuteNonQuery() == 1)
+            {
+                meuBancoDeDados.fecharconexao();
+                return true;
+            }
+            else 
+            {
+                meuBancoDeDados.fecharconexao();
+                return false;
+            }
+
+        }
+
 
     }
 }
