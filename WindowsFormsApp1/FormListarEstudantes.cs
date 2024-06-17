@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,7 +56,31 @@ namespace WindowsFormsApp1
 
         private void dataGridViewListadeAlunos_DoubleClick(object sender, EventArgs e)
         {
+            FormAtualizareApagarEstudantes formAtualizareApagarEstudantes = new FormAtualizareApagarEstudantes();
 
+
+            formAtualizareApagarEstudantes.textBoxId.Text = dataGridViewListadeAlunos.CurrentRow.Cells[0].Value.ToString();
+            formAtualizareApagarEstudantes.textBoxNome.Text = dataGridViewListadeAlunos.CurrentRow.Cells[1].Value.ToString();
+            formAtualizareApagarEstudantes.textBoxSobreNome.Text = dataGridViewListadeAlunos.CurrentRow.Cells[2].Value.ToString();
+            formAtualizareApagarEstudantes.textBoxTelefone.Text = dataGridViewListadeAlunos.CurrentRow.Cells[3].Value.ToString();
+            formAtualizareApagarEstudantes.textBoxEndenreco.Text = dataGridViewListadeAlunos.CurrentRow.Cells[4].Value.ToString();
+            formAtualizareApagarEstudantes.dateTimePickerNascimento.Value = (DateTime)dataGridViewListadeAlunos.CurrentRow.Cells[5].Value;
+
+            if (dataGridViewListadeAlunos.CurrentRow.Cells[6].Value.ToString() == "Femnino")
+
+            {
+                formAtualizareApagarEstudantes.radioButtonFeminino.Checked = true;
+            }
+            else
+                    {
+                formAtualizareApagarEstudantes.radioButtonMasculino.Checked = true;
+
+                byte[] foto;
+                foto = (byte[])dataGridViewListadeAlunos.CurrentRow.Cells[7].Value;
+                MemoryStream fotoDoAluno = new MemoryStream(foto);
+                formAtualizareApagarEstudantes.pictureBoxFotoAlunoNovo.Image = Image.FromStream(fotoDoAluno);
+                formAtualizareApagarEstudantes.Show();
+            }
         }
     }
 }
